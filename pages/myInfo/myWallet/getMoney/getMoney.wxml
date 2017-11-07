@@ -1,0 +1,9 @@
+<view>
+  <form bindsubmit='getMoney'>
+    <view class='moneyItem'><text>姓名</text><input name="name" placeholder='姓名'  /></view>
+    <view class='moneyItem'><text>手机号</text><input name="phone" placeholder='手机号' type='number' maxlength='11'/></view>
+    <view class='moneyItem'><text>微信号</text><input name="wxhao" placeholder='微信号' /></view>
+    <view class='moneyItem'><text>提现金额</text><input name="money" value='{{maxMoney}}' type='number'	maxlength='7' disabled='true' style="color:#fe4145" />元</view>
+    <view class='moneyItem'><button formType='submit'>提现</button></view>
+  </form>
+</view>

@@ -1,0 +1,8 @@
+<view class="reply-container">
+  <form bindsubmit='subContent'>
+    <view class="reply-text">
+      <textarea placeholder="填写评论内容 " name="sub" maxlength='-1' />
+    </view>
+    <view class="reply-submit"><button form-type='submit'>发表</button></view>
+  </form>
+</view>

@@ -1,0 +1,20 @@
+<view class='warn-text'>
+    <text class='iconfont icon-warn'></text><text>{{config.name}}不允许项目发起人在项目内容或者更新内容中上传二维码或引导用户发微信红包、支付宝、私人账号汇款，一经发现，严肃处理。</text>
+</view>
+<view>
+    <form bindsubmit='updataStatus'>
+        <view class='updata-text'><textarea name="content" maxlength='-1' placeholder='请填写更新内容'  /></view>
+        <view class='imgContaner'>
+          <view class="btn-upload-img" bindtap="upLoadImg" wx:if="{{!imgUrls.length}}">
+              + 点击上传图片（0~8张）
+          </view>
+          <view class="imgList">
+            <block wx:for="{{imgUrls}}" wx:for-item="imgUrl" wx:key>
+               <view class="imgList"><image src="{{imgUrl}}"></image><view class="iconfont icon-close" bindtap="closeImg" data-index="{{index}}"></view></view>
+            </block>
+            <text class="addImg" wx:if="{{imgUrls.length!=0&&imgUrls.length<8}}" bindtap="addImg">+</text>
+          </view>
+        </view>       
+        <view class='updata-btn'><button form-type='submit'>发布</button></view>
+    </form>
+</view>

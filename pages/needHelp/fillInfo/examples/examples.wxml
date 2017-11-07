@@ -1,0 +1,15 @@
+<view class="outer">
+  <view wx:if='{{tag==1}}'>
+    <view class="dtitle">参考示例</view>
+    <text>{{config.title}}</text>
+  </view>
+  <view wx:if='{{tag==2}}'>
+    <view class='dtitle'>参考示例</view>
+    <view><text>{{config.content}}</text></view>
+  </view>
+  <view wx:if='{{tag==3}}'>
+     <view class="dtitle">上传指南</view>
+     <view><text>{{config.file}}</text></view>
+  </view>  
+  <button style="background:#fe4145;color:#fff;margin-top:40rpx;" bindtap="agreeAndContinue">我知道了</button>
+</view>

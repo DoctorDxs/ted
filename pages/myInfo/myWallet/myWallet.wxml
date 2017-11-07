@@ -1,0 +1,7 @@
+<view class="wallet-info">
+  <view class="money">{{money}}</view>
+<view class=" balance">账户余额</view>
+<view class="draw-money" bindtap="getMoney"><button disabled="{{money==0}}">余额提现</button></view>
+</view>
+
+

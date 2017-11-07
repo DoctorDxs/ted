@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/details/helpDetail",
+    "pages/index/details/helpHim/helpHim",
+    "pages/index/details/reply/reply",
+    "pages/index/details/illustration/illustration",
+    "pages/index/details/report/report",
+    "pages/needHelp/fillInfo/fillInfo",
+    "pages/needHelp/fillInfo/agreement/agreement",
+    "pages/needHelp/fillInfo/examples/examples",
+    "pages/myInfo/myInfo",
+    "pages/myInfo/myProject/projectManger/updataStatus/updataStatus",
+    "pages/myInfo/myProject/projectManger/supportRecorde/supportRecorde",
+    "pages/myInfo/myProject/projectManger/projectManger",
+    "pages/myInfo/myHelped/myHelped",
+    "pages/myInfo/myAttention/myAttention",
+    "pages/myInfo/myProject/myProject",
+    "pages/myInfo/myWallet/getMoney/getMoney",
+    "pages/myInfo/myWallet/myWallet"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fe4145",
+    "navigationBarTextStyle": "#fff",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#fe4145",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon/home.png",
+        "selectedIconPath": "images/icon/home-active-red.png"
+      },
+      {
+        "pagePath": "pages/needHelp/fillInfo/fillInfo",
+        "text": "发起",
+        "iconPath": "images/icon/help.png",
+        "selectedIconPath": "images/icon/help-active-red.png"
+      },
+      {
+        "pagePath": "pages/myInfo/myInfo",
+        "text": "我",
+        "iconPath": "images/icon/myInfo.png",
+        "selectedIconPath": "images/icon/myInfo-active-red.png"
+      }
+    ]
+  }
+}

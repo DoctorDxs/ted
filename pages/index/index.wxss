@@ -1,0 +1,36 @@
+page{background: #f9f9f9; font-family: 'Microsoft YaHei';}
+/* 主页导航栏  */
+.home-nav {display: flex;flex-direction: row; justify-content: space-between; background: #fff;}
+.home-nav view {width: 50%;text-align: center;color: #003333; padding: 24rpx 0;font-size: 34rpx;}
+/* 导航栏点击样式  */
+.home-nav .border-active {border-bottom: 1px solid red;color: red;}
+/* 主页主要内容样式  */
+.home-content {background: #fff;margin-top: 20rpx;padding: 30rpx 20rpx;}
+/* 求助人/求助组织信息  */
+.helped-info{display: flex;flex-direction: row;justify-content: space-between;align-items: center}
+.acatar-img{width:80rpx;height:80rpx; border-radius: 50%;}
+
+/* 个人求助页面   个人名字溢出处理  */
+.helped-name {font-size: 32rpx;margin-left: 15rpx;color: #888;max-width: 280rpx;white-space: nowrap;overflow: hidden; text-overflow: ellipsis;}
+
+.helped-staus text{margin: 0 5rpx;}
+.helped-staus{font-size: 24rpx;}
+.avtar-name  {display: flex;flex-direction: row;align-items: center}
+.confirmed-total{color: #888;}
+.confirmed-num {color: red;}
+.audited {background:#FA9A0C;padding: 2rpx;color: #fff;}
+.private-bailout {background:#58C158;padding: 2rpx;color: #fff; }
+/* 求助人/求助组织文字描述  */
+.description-text {font-size: 32rpx;margin: 30rpx 0;}
+/* 求助人/求助组织 图片展示  */
+.description-imgs scroll-view {white-space: nowrap;display: flex;overflow: scroll;}
+.description-imgs scroll-view view{display: inline-block;margin:0 5rpx;width:200rpx;}
+.description-imgs scroll-view view image {height: 200rpx;width: 200rpx;}
+/* 求助进度  */
+.fundraise-progress {margin: 20rpx 0; color: #999;}
+.fundraise-status {display: flex;flex-direction: row;justify-content: space-between;font-size: 24rpx;color: #999;margin-top: 20rpx;}
+.suport-total {color: #666;}
+
+
+
+

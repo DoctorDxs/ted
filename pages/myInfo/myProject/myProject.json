@@ -1,0 +1,5 @@
+{
+  "navigationBarTitleText": "发起的项目",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": "50"
+  }

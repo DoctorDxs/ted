@@ -1,0 +1,248 @@
+<!-- 求助人详细信息  -->
+<!-- 个人信息及筹款进度  -->
+<view class="help-details">
+  <view class="helped-info">
+    <view class="helped-avatarName">
+      <image wx:if='{{thisInfo.user_wxa.avatarUrl}}' src="{{thisInfo.user_wxa.avatarUrl}}"></image>
+      <text>{{thisInfo.user_wxa.nickName}}</text>
+    </view>
+    <navigator class='report' url='report/report?projectid={{thisInfo.id}}' wx:if="{{!project}}">举报</navigator>
+    <navigator class='report' url='/pages/myInfo/myProject/projectManger/projectManger?projectid={{thisInfo.id}}&status={{thisInfo.status}}&price={{thisInfo.money}}&checks={{thisInfo.checks}}&is_check={{thisInfo.is_check}}' wx:if="{{project}}" open-type='redirect'>项目管理</navigator>
+  </view>
+  <view class="description-text">{{thisInfo.title}}</view>
+  <view class="fundraise-progress">
+    <progress percent="{{thisInfo.progress}}" backgroundColor="#ccc" activeColor="green" color="#ccc" stroke-width="2" show-info/>
+  </view>
+  <view class="fundraise-status">
+    <view wx:if='{{thisInfo.checks==1 && thisInfo.status==1 && thisInfo.type !=0}}'>已筹
+      <text class="already-days">{{thisInfo.tday}}</text>{{thisInfo.tclass==1?'分钟':(thisInfo.tclass==2?'小时':(thisInfo.tclass==3?'天':(thisInfo.tclass==4?'月':'年')))}}
+    </view>
+    <view wx:if='{{thisInfo.checks==0 && thisInfo.type==0}}'>
+      <text class="already-days">审核中</text>
+    </view>
+    <view wx:if='{{thisInfo.checks==1 && thisInfo.status==2 && thisInfo.type !=0}}'>
+      <text class="already-days">筹款已结束</text>
+    </view>
+    <view wx:if='{{thisInfo.checks==-1}}'>
+      <text class="already-days">审核未通过</text>
+    </view>
+    <view wx:if='{{thisInfo.checks==1 && thisInfo.type==0}}'>
+      <text class="already-days">类型未选择</text>
+    </view>
+    <view wx:if='{{thisInfo.checks==1 && thisInfo.status==0 && thisInfo.type !=0}}'>
+      <text class="already-days">项目在首页已隐藏</text>
+    </view>
+    <view class="capital-flows" bindtap="illustration">资金流向说明
+      <text class='iconfont icon-wenhao'></text>
+    </view>
+  </view>
+  <!-- 个人救助  -->
+  <view wx:if="{{thisInfo.type == 1||thisInfo.type==''}}">
+    <view class="funds-detail">
+      <view>
+        <view class="total-num">
+          <text>{{thisInfo.price}}</text>元</view>
+        <view>
+          <text>目标金额</text>
+        </view>
+      </view>
+      <view>
+        <view class="middle-border">
+          <view class="total-num">
+            <text>{{thisInfo.money}}</text>元</view>
+          <view>
+            <text>已筹金额</text>
+          </view>
+        </view>
+      </view>
+      <view>
+        <view class="total-num">
+          <text>{{thisInfo.people}}</text>次</view>
+        <view>
+          <text>帮助次数</text>
+        </view>
+      </view>
+    </view>
+     <view class="hr-line"></view> 
+  </view>
+  <!-- 轻松公益  -->
+  <view wx:if="{{thisInfo.type == 2}}" class="total-support">
+    <view class="total-support-item border-left">
+      <view class="iconfont icon-qiandai icon-money"></view>
+      <view class="already-get">
+        <view class="already-support">
+          <text>{{thisInfo.money}}</text>元</view>
+        <view>已筹金额</view>
+      </view>
+    </view>
+    <view class="total-support-item">
+      <view class="iconfont icon-shoupengxianjin icon-money"></view>
+      <view class="already-get">
+        <view class="already-support">
+          <text>{{thisInfo.people}}</text>次</view>
+        <view>帮助次数</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 项目详情  -->
+<view class="project-details-header border-bottom">
+  <view class="project-details-title">项目详情</view>
+  <view class="project-details-add">
+    <text class="olone-style" wx:if='{{thisInfo.checks==0}}'>审核中</text>
+    <text class="olone-style" wx:if='{{thisInfo.checks==-1}}'>审核未通过</text>
+    <view class="olone-style" wx:if='{{thisInfo.checks==1 && thisInfo.type==0}}'>类型未选择</view>
+    <text class="olone-style" wx:if='{{thisInfo.type==1 && thisInfo.checks==1}}'>个人救助</text>   
+    <text class="olone-style" wx:if='{{thisInfo.type==2 && thisInfo.checks==1}}'>轻松公益</text> 
+  </view>
+</view>
+<view class="project-details">
+  <view class="details-text-img">
+    <!-- 文字描述  -->
+    <view class="{{textFold ? 'details-text' : 'text-fold'}}">
+      <text>{{thisInfo.content}}</text>
+    </view>
+    <!-- 图片描述  -->
+    <view class="details-img">
+      <!-- 文字折叠按钮 -->
+      <view class="fold-btn" hidden="{{!textFold || thisInfo.content.length<110}}" bindtap="expandText">展开全文</view>
+      <view class="description-imgs">
+        <scroll-view scroll-x="true">
+          <block wx:for="{{thisInfo.file}}" wx:for-item="imgItem" wx:key>
+            <view>
+              <image  wx:if='{{imgItem}}' src="{{imgItem}}" bindtap='bigImg' data-imgindex='{{index}}'></image>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 发起人承诺书  -->
+<view>
+  <view class="increase-credible">
+    发起人承诺书
+  </view>
+  <view class="helped-promise">
+    <text>{{config.promise}}</text>
+  </view>
+</view>
+
+
+
+<!-- 筹款动态 和 资金公示  -->
+<view class="fundraise-news">
+  <view class="fundraise-news-nav border-bottom">
+    <view>筹款动态</view>
+  </view>
+  <!--筹款动态栏  -->
+  <view>
+    <block wx:for="{{collectionStatus}}" wx:for-item='dynamic' wx:key>
+      <view class="ta-help-people" wx:if='{{dynamic.status==1}}'>
+        <!--头像 发起人昵称 发起状态   发起时间  -->
+        <view class="avatarImg">
+          <image wx:if='{{dynamic.user_wxa.avatarUrl}}' src="{{dynamic.user_wxa.avatarUrl}}"></image>
+        </view>
+        <view class="ta-help-info">
+          <view>
+            <view>
+              <text class="ta-help-name">{{dynamic.user_wxa.nickName}}</text>
+              <text class="ta-help-support">
+                <text>{{collectionStatus.length-1==index? '项目发起':(thisInfo.status==2?'项目结束':'项目更新')}}</text>
+              </text>
+            </view>
+            <view class="ta-help-date">
+              <view>{{dynamic.tDate}}</view>
+              <view class="iconfont icon-xiaoxi1 ta-help-reply" bindtap="reply" data-dynamic='{{dynamic.id}}'></view>
+            </view>
+          </view>
+          <!-- 文字描述  -->
+          <view class="dynamicContent"><text>{{dynamic.content}}</text></view>
+          <!-- 图片展示  -->
+          <view class='imgStatus'>
+            <block wx:for='{{dynamic.file}}' wx:for-item='dynamicItem' wx:key>
+              <image wx:if='{{dynamicItem}}' src="{{dynamicItem}}" bindtap='bigImga' data-imgindexa='{{index}}'  data-statusid='{{dynamic.id}}'></image>
+            </block>
+          </view>
+          <!-- 留言和回复  -->
+          <view style='margin-top:15rpx;'>
+            <block wx:for='{{dynamic.comment}}' wx:for-item='commentItem' wx:key>
+              <view class="ta-help-message" wx:if='{{commentItem.status==1}}'>
+                <text class="ta-reply">{{commentItem.user_wxa.nickName}}：</text>
+                <text>{{commentItem.content}}</text>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- Ta 的帮助  -->
+<view class="ta-help">
+  <view class="ta-help-header border-bottom">
+    <text>TA的帮助</text>
+    <text class="ta-help-num">{{thisInfo.people}}</text>
+  </view>
+
+  <!-- 留言捐助开始  -->
+  <block wx:for="{{helpData}}" wx:key wx:for-item='helpListItem'>
+    <view class="ta-help-people border-bottom">
+      <view class="avatarImg">
+        <image wx:if='{{helpListItem.user_wxa.avatarUrl}}' src="{{helpListItem.user_wxa.avatarUrl}}"></image>
+      </view>
+      <view class="ta-help-info">
+        <view>
+          <view>
+            <text class="ta-help-name">{{helpListItem.status==1?helpListItem.user_wxa.nickName:'******'}}</text>
+            <text class="ta-help-support">支持了</text>
+            <text class='moneyNum'>{{helpListItem.price}}元</text>
+          </view>
+          <view class="ta-help-date">
+            <view>{{helpListItem.tDate}}</view>
+            <view class="iconfont icon-xiaoxi1 ta-help-reply" bindtap="helpReply" data-donation='{{helpListItem.id}}'></view>
+          </view>
+        </view>
+        <view>
+          <view class="ta-help-message" wx:if='{{helpListItem.sub}}'>
+            <text class="ta-reply">{{helpListItem.user_wxa.nickName}}：</text>
+            <text>{{helpListItem.sub}}</text>
+          </view>
+          <block wx:for='{{helpListItem.comment}}' wx:for-item='comment' wx:key>
+            <view class="ta-help-message" wx:if='{{comment.status==1}}'>
+              <text class="ta-reply">{{comment.user_wxa.nickName}}：</text>
+              <text>{{comment.content}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 留言循环结束  -->
+  <view class='nomore' wx:if='{{nomore}}'>没有数据了...</view>
+</view>
+
+
+<!-- 底部导航  -->
+<view class="nav-bottom">
+  <view class="nav-bottom-btn">
+    <view class="nav-to-link" bindtap="tabHome">
+      <view class="iconfont icon-shouyexian btn-icon"></view>
+      <text>首页</text>
+    </view>
+    <view class="nav-to-link" bindtap="attention">
+      <view class="iconfont  btn-icon {{status == 1 ? 'icon-xing' : 'icon-xing1'}}"></view>
+      <text>{{thisInfo.num}}</text>
+    </view>
+    <view class="nav-to-link">
+      <button class="iconfont icon-fenxiang btn-icon" open-type='share' style='background-color:#fff'></button>
+      <text>{{thisInfo.relay}}</text>
+    </view>
+    <view class="btn-click-help" bindtap="helpHim">
+      <button>帮助TA</button>
+    </view>
+  </view>
+</view>

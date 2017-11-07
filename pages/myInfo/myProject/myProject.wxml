@@ -1,0 +1,27 @@
+<view wx:if='{{myProjects.length==0}}' class='nodata'>
+    <view></view> 
+    <view></view>
+    <text>暂无数据</text> 
+    <view></view>
+    <view></view>
+</view>
+<view class="marbt">
+  <block wx:for="{{myProjects}}" wx:for-item='projectItem' wx:key>
+    <view class="myProject" bindtap="lookDetial" data-id="{{projectItem.id}}" data-status="{projectItem.status}" data-checks='{{projectItem.checks}}'>
+      <view class="projectDetial">
+        <image wx:if='{{projectItem.user_wxa.avatarUrl}}' src="{{projectItem.user_wxa.avatarUrl}}"></image>
+        <view class="projectInfo">
+          <text class="title">{{projectItem.title}}</text>
+          <text class='statu' wx:if='{{projectItem.checks==1 && projectItem.status==2 && projectItem.type !=0}}'>筹款结束</text>
+          <text class='statu' wx:if='{{projectItem.checks==1 && projectItem.type ==0}}'>类型未选择</text>
+          <text class='statu' wx:if='{{projectItem.checks==0 && projectItem.type ==0}}'>审核中</text>
+          <text class='statu' wx:if='{{projectItem.checks==-1}}'>审核未通过</text>
+          <text class='statu' wx:if='{{projectItem.checks==1 && projectItem.status==1 && projectItem.type !=0}}'>筹款中</text> 
+          <text class='statu' wx:if='{{projectItem.checks==1 && projectItem.status==0 && projectItem.type !=0}}'>项目在首页已隐藏</text>
+          <text class="datetime">{{projectItem.tDate}}</text>
+        </view>
+      </view>
+      <view class="iconfont icon-you-copy-copy"></view>
+    </view>
+  </block>
+</view>

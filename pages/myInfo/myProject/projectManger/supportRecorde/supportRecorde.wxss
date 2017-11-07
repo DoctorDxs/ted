@@ -1,0 +1,24 @@
+page{background: #efefef}
+.total-header {background: #fff;display: flex;flex-direction: row;justify-content: space-around;text-align: center;align-items: center;padding: 30rpx 20rpx;}
+.middleBorder {border-left: 1px solid #e3e4e5;border-right:1px solid #e3e4e5; }
+.total-item {width: 100%; font-size: 24rpx;}
+.total-item view:nth-child(2){margin-top: 10rpx;}
+.number  {font-size: 40rpx;margin-right: 10rpx;}
+.nodata {font-size: 30rpx;color: #999;text-align: center;margin-top: 300rpx;}
+
+.ta-help-info {width: 100%;}
+.ta-help {background: #fff;margin-top: 30rpx;}
+.ta-help-header {padding: 20rpx; background: #fff;color: #555; font-size: 28rpx}
+.ta-help-num {background: #efefef;border-radius: 50%;padding: 10rpx 0;margin-left: 10rpx;font-size: 22rpx;color: red;}
+.ta-help-people {padding: 20rpx 0 40rpx; margin-top: 20rpx;margin: 20rpx 20rpx 20rpx 40rpx;display: flex;flex-direction: row; }
+.ta-help-name {color: #666;font-size: 26rpx;padding-right: 10rpx;}
+.ta-help-support {color: #000;font-size: 21rpx;}
+.moneyNum {color: red;font-size: 21rpx;}
+.ta-help-date {display: flex;flex-direction: row;justify-content: space-between;font-size: 22rpx;color: #999;width: 100%}
+.ta-help-reply {color: red;}
+.ta-help-message {font-size: 28rpx;background: #F5F5F5;padding: 5rpx 10rpx}
+.ta-reply {color: #4787B7;}
+.border-left { border-right:1px solid #e3e4e5;}
+.avatarImg {margin-right: 20rpx;}
+.avatarImg image {width:60rpx;height:60rpx; border-radius: 50%;margin-top: 10rpx;}
+.border-bottom{border-bottom: 1px solid #e3e4e5}

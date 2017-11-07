@@ -1,0 +1,32 @@
+<view class="myInfo">
+  <view class="info-detail">
+    <image wx:if='{{userInfo.avatarUrl}}' src="{{userInfo.avatarUrl}}"></image>
+    <view class="myInfo-name">{{userInfo.nickName}}</view>
+  </view>
+</view>
+
+<view class="my-operation">
+  <view class="my-operation-items" bindtap="myProject">
+    <view>发起的项目</view>
+    <view class="myInfo-edit"><text class="total-num">{{myProject.length}}</text><text class="iconfont icon-you-copy-copy"></text></view>
+  </view>
+  <view class="my-operation-items" bindtap="myHelped">
+    <view>我帮助过</view>
+    <view class="myInfo-edit"><text class="total-num">{{myHelp.length}}</text><text class="iconfont icon-you-copy-copy"></text></view>
+  </view>
+  <view class="my-operation-items" bindtap="myAttention">
+    <view>我的关注</view>
+    <view class="myInfo-edit"><text class="total-num">{{myAttention.length}}</text><text class="iconfont icon-you-copy-copy"></text></view>
+  </view>
+</view>
+
+<view class="my-operation">
+   <view class="my-operation-items" bindtap="myWallet">
+    <view>我的钱包</view>
+    <view class="myInfo-edit"><text class="total-num iconfont icon-you-copy-copy"></text></view>
+  </view>
+  <view class="my-operation-items" bindtap="telCall">
+    <view>联系客服</view>
+    <view class="myInfo-edit"><text class="total-num iconfont icon-you-copy-copy"></text></view>
+  </view>
+</view>

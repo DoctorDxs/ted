@@ -1,0 +1,5 @@
+{
+  "navigationBarTitleText": "支持记录",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": "50"
+}

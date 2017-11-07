@@ -1,0 +1,5 @@
+
+.moneyItem{display: flex;flex-direction: row;align-items: center;padding: 20rpx;background: #fff;border-bottom: 1px solid #e3e4e5;font-size: 30rpx;margin: 10rpx;}
+.moneyItem text{width: 200rpx;}
+.moneyItem input{width: 100%;}
+.moneyItem button{width: 100%;background: #fe4145;color: #fff;}

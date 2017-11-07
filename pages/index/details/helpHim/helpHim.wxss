@@ -1,0 +1,12 @@
+/* pages/index/details/helpHim/helpHim.wxss */
+page {background: #efefef;}
+.support-money {display: flex;flex-direction: row;justify-content: space-between;align-items: center; padding: 20rpx;font-size: 32rpx;background: #fff;margin-top: 30rpx;}
+.support-money input{ width: 100%;margin-left: 20rpx;}
+.support-money text:nth-child(1) {min-width: 150rpx;}
+.anonymous-support {border-top: 1px solid #e3e4e5;padding: 20rpx;font-size: 32rpx;background: #fff;display: flex;flex-direction: row;align-items: center}
+.textarea-text {height: 300rpx;background: #fff;padding: 20rpx;margin-top: 30rpx;font-size: 30rpx;}
+.textarea-text textarea{width: 100%;height: 100%;}
+.total-submit {position: fixed;bottom: 0;padding: 20rpx;background: #fff;width: 100%;display: flex;flex-direction: row;justify-content: space-between;align-items: center;}
+.total-submit {font-size: 30rpx;position: fixed;bottom: 0;padding: 20rpx;background: #fff;width: 100%;display: flex;flex-direction: row;justify-content: space-between;align-items: center;}
+.total-submit button {background: #fe4145;color: #fff;margin-right: 40rpx;width: 250rpx;}
+.howMoney {color: red;margin-left: 20rpx;}

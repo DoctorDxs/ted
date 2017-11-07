@@ -1,0 +1,46 @@
+<view class="fill-detial-information">
+  <form bindsubmit="submitHelpInfo">
+    <!-- 目标  -->
+    <view class="info-title">目标金额</view>
+    <view class="file-detail"> 
+      <input placeholder="填写目标金额" type="digit" name="helpMoney" maxlength="7" value="{{edit?thisInfo.price:inputText}}" bindinput='watchNum' />
+      <text>元</text>
+    </view>
+      <!--标题  -->
+    <view class="info-title">筹款标题<text class="small-text" bindtap="example" data-tag='1'>参考实例</text></view>
+    <view class="file-detail-text"> 
+      <input placeholder="好的标题筹款更快(不少于4个汉字且不超过20个汉字)" maxlength="20" name="helpTitle" value="{{edit?thisInfo.title:''}}" />
+    </view>
+    <!--说明  -->
+    <view class="info-title">筹款说明<text class="small-text" bindtap="example" data-tag='2'>参考实例</text></view>
+    <view class="file-detail-text"> 
+      <textarea value="{{edit?thisInfo.content:''}}" placeholder="提示：请详细填写筹款原因、筹款目的、自身状况和善款用途等信息(不少于10个汉字)。不得出现任何联系方式和银行卡等收款信息，包括但不限于手机号码、微信号、支付宝帐号、银行卡号等信息，否则项目验证和提现申请均不予通过。" maxlength="-1" name="helpText" wrap="physical"  bindfocus="textareaFocus" bindblur="textareaBlur" cursor-spacing='0' />
+    </view>
+    <!-- 图片  -->
+    <view class="info-title">添加图片<text class="small-text" bindtap="example" data-tag='3'>上传指南</text></view>
+    <view class="upload-description">
+      真实感人的照片,更易获得1.5亿用户的广泛信任，更快筹到钱(建议上传阳光正面的照片，切勿上传血腥等易引起他人不适的图片)
+    </view>
+    <view class="btn-upload-img" bindtap="upLoadImg" wx:if="{{!imgUrls.length}}">
+      + 点击上传项目图片（0~8张）
+    </view>
+    <view class="imgList">
+      <block wx:for="{{imgUrls}}" wx:for-item="imgUrl" wx:key>
+        <view class="imgList" wx:if='{{imgUrl}}'>
+          <image src="{{imgUrl}}"></image>
+          <view class="iconfont icon-close" bindtap="closeImg" data-index="{{index}}"></view>
+        </view>
+      </block>
+      <text class="addImg" wx:if="{{imgUrls.length!=0&&imgUrls.length<8}}" bindtap="addImg">+</text>
+    </view>
+    <view class="read-agree">
+      <text class="iconfont icon-duihao {{agree?'agree':'not_agree'}}" bindtap='agree_click'></text>
+      <text class="agree-text">阅读并同意</text> 
+      <navigator url="agreement/agreement?id=0">《{{config.name}}项目发起条款》</navigator>
+      <text class="agree-text">及</text>
+      <navigator url="agreement/agreement?id=1">《发起人承诺书》</navigator>      
+    </view>
+    <view class="btn-submit"><button formType="submit" disabled='{{!agree}}'>提交</button></view>
+  </form>
+  <view class="btn-tel" bindtap="telCall">客服电话:<text class="tel-num">{{config.phone}}</text></view>
+</view>

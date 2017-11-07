@@ -1,0 +1,25 @@
+<view class="report-info">
+  <form bindsubmit="reportSubmit">
+    <view class="report-items">
+      <text>真实姓名</text><input placeholder="填写举报人真实姓名" name="realNmae" maxlength="15" />
+    </view>
+    <view class="report-items">
+      <text>身份证号</text><input placeholder="填写举报人身份证号" name="idCard" maxlength="18"  />
+    </view>
+    <view class="report-items">
+      <textarea placeholder="填写您举报该项目的理由" name="reportText"  />
+    </view>
+    <view class="uploadImg">
+    <view class="btn-upload-img" bindtap="upLoadImg" wx:if="{{!imgUrls.length}}">
+      + 点击上传举报图片（0~8张）
+    </view>
+    <view class="imgList">
+      <block wx:for="{{imgUrls}}" wx:for-item="imgUrl" wx:key>
+        <view class="imgList"><image src="{{imgUrl}}"></image><view class="iconfont icon-close" bindtap="closeImg" data-index="{{index}}"></view></view>
+      </block>
+      <text class="addImg" wx:if="{{imgUrls.length!=0&&imgUrls.length<8}}" bindtap="addImg">+</text>
+    </view>
+    </view>
+    <view class="report-submit"><button formType="submit">确认举报</button></view>
+  </form>
+</view>

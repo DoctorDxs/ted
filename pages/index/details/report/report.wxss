@@ -1,0 +1,17 @@
+page {font-size: 30rpx;}
+.report-items {border-bottom: 1px solid #e3e4e5;background: #fff;padding: 20rpx;display: flex;flex-direction: row;align-items: center;}
+.report-items input {width: 100%;}
+.report-items text {width: 200rpx;}
+.report-items textarea {width: 100%;}
+.upload-img {margin-top: 40rpx; border: 2px dashed #666;margin: 0 auto;height: 100rpx;width: 100%;text-align: center;line-height: 100rpx;font-size: 40rpx;color: red;}
+.report-submit {margin-top: 40rpx;padding: 20rpx;}
+.report-submit button {color: #fff;background:#fe4145;}
+
+
+.btn-upload-img {font-size:40rpx;color: red;text-align: center;min-height: 120rpx;border: 2px dashed #d3d4d5;line-height: 120rpx;margin: 20rpx 0;}
+.imgList {margin: 20rpx 0;display: flex;flex-direction: row;flex-wrap: wrap;align-items: center;}
+.imgList image{height: 130rpx;width: 130rpx;margin: 0 20rpx;}
+.addImg{border: 1px dashed #e3e4e5;height: 130rpx;width: 130rpx;font-size:130rpx;color: #e3e4e5;text-align: center;line-height: 120rpx; }
+.imgList {position: relative;}
+.icon-close {position:absolute;font-size: 36rpx;background: rgba(000,000,000,.5);color: #fff;right: 25rpx;top: 5rpx;}
+.uploadImg {padding: 20rpx;background: #fff;}

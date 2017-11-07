@@ -1,0 +1,5 @@
+{
+  "navigationBarTextStyle": "#fff",
+  "navigationBarTitleText": "我的余额",
+  "enablePullDownRefresh": true
+}

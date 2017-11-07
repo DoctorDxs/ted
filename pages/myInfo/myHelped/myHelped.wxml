@@ -1,0 +1,24 @@
+<view wx:if='{{myHelp.length==0}}' class='nodata'>
+    <view></view> 
+    <view></view>
+    <text>暂无数据</text> 
+    <view></view>
+    <view></view>
+</view>
+<view class="marbt">
+  <block wx:for="{{myHelp}}" wx:for-item='helpItem' wx:key>
+    <view class="myProject" bindtap="lookDetial" data-id="{{helpItem.collect_id}}">
+      <view class="projectDetial">
+        <image wx:if='{{helpItem.user_wxa.avatarUrl}}' src="{{helpItem.user_wxa.avatarUrl}}"></image>
+        <view class="projectInfo">
+          <text class="title">{{helpItem.title}}</text>
+          <text class='statu' wx:if='{{helpItem.status==2}}'>筹款结束</text>
+          <text class='statu' wx:if='{{helpItem.checks==1 && helpItem.status==1 && helpItem.type !=0}}'>筹款中</text> 
+           <text class='statu' wx:if='{{helpItem.checks==1 && helpItem.status==0 && helpItem.type !=0}}'>项目隐藏</text>
+          <text class="datetime">{{helpItem.tDate}}</text>
+        </view>
+      </view>
+      <view class="iconfont icon-you-copy-copy"></view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,7 @@
+/* pages/myInfo/myWallet/myWallet.wxss */
+.wallet-info {display: flex;flex-direction: column;align-items: center;padding: 20rpx}
+
+.money {color: red;font-size: 80rpx; margin: 100rpx 0 40rpx}
+.balance {font-size: 28rpx;color: #999;}
+.draw-money {width: 100%; margin-top: 80rpx;}
+.draw-money button{background: #fe4145;color: #fff;}

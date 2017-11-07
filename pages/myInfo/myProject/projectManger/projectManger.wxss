@@ -1,0 +1,4 @@
+.items-style {display: flex;flex-direction: row;flex-wrap: wrap;justify-content: flex-start; align-items: center;}
+.icon-style {color: red;font-size: 78rpx;}
+.mange-item{font-size: 28rpx;margin-top: 20rpx}
+.manger-items {display: flex;flex-direction: column;align-items: center;margin: 40rpx 0 0 60rpx;}

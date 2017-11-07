@@ -1,0 +1,13 @@
+/* pages/myInfo/myProject/myProject.wxss */
+page{background: #f9f9f9;}
+.noProject{text-align: center;color: #999;margin-top: 300rpx;}
+.myProject {padding: 10rpx 20rpx;background: #fff;display: flex;flex-direction: row;justify-content: space-between;align-items: center;margin-top: 20rpx;}
+.myProject image{width: 100rpx;height: 100rpx;}
+.projectDetial {display: flex;flex-direction: row;align-items: center;}
+.projectInfo {display: flex;flex-direction: column;}
+.projectInfo text{margin: 5rpx 20rpx;}
+.title {font-size: 28rpx;max-width:280rpx;overflow: hidden;white-space:nowrap; text-overflow:ellipsis;}
+.statu{font-size: 24rpx;color: red;}
+.datetime{font-size: 22rpx;color: #999;}
+.icon-you-copy-copy {color: #999;}
+.marbt {margin-bottom: 30rpx;}

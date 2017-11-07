@@ -1,0 +1,3 @@
+<view class="iilustration">
+  <text>{{config.explain}}</text>
+</view>

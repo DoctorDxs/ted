@@ -1,0 +1,25 @@
+<view wx:if='{{myAttention.length==0}}' class='nodata'>
+    <view></view> 
+    <view></view>
+    <text>暂无数据</text> 
+    <view></view>
+    <view></view>
+</view>
+<view class="marbt">
+  <block wx:for="{{myAttention}}" wx:for-item='attentionItem' wx:key>
+    <view class="myProject" bindtap="lookDetial" data-id="{{attentionItem.collect_id}}">
+      <view class="projectDetial">
+        <image wx:if='{{attentionItem.avatarUrl}}' src="{{attentionItem.avatarUrl}}"></image>
+        <view class="projectInfo">
+          <text class="title">{{attentionItem.title}}</text>
+          <text class='statu' wx:if='{{attentionItem.status==2}}'>筹款结束</text>
+          <text class='statu' wx:if='{{attentionItem.checks==1 && attentionItem.status==1 && attentionItem.type !=0}}'>筹款中</text> 
+           <text class='statu' wx:if='{{attentionItem.checks==1 && attentionItem.status==0 && attentionItem.type !=0}}'>项目已隐藏</text>      
+          <text class="datetime">{{attentionItem.tDate}}</text>
+        </view>
+      </view>
+      <view class="iconfont icon-you-copy-copy"></view>
+    </view>
+  </block>
+  <view class='nomore' wx:if='{{nomore && myAttention.length!==0}}'>没有数据了...</view>
+</view>

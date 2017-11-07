@@ -1,0 +1,89 @@
+page{background: #efefef; font-family: 'Microsoft YaHei';padding-bottom: 105rpx;}
+.warning {font-size: 28rpx;padding: 20rpx;background:#CDFBBB;color: red;}
+.icon-warn {font-size: 26rpx;margin-right: 20rpx;}
+/* 求助详情  */
+.help-details{background: #fff;padding: 30rpx 20rpx;}
+/* 求助信息及进度  */
+.helped-info{display: flex;flex-direction: row;justify-content: space-between;font-size: 32rpx;align-items: center}
+.helped-avatarName {display: flex;flex-direction: row;align-items: center;}
+.helped-avatarName text {margin-left: 30rpx;color: #888;max-width: 360rpx;white-space: nowrap;overflow: hidden; text-overflow: ellipsis; }
+.helped-avatarName image {width:80rpx;height:80rpx; border-radius: 50%;} 
+.report{border: 1px solid red;padding: 15rpx 20rpx;color:  #fe4145;}
+.description-text{font-size: 32rpx;margin: 30rpx 0;}
+
+
+/* 进度进度条  */
+.fundraise-progress {margin: 30rpx 0;color: #999}
+.fundraise-status {display: flex;justify-content: space-between;font-size: 28rpx;color: #555;margin: 30rpx 0;}
+.fundraise-status .capital-flows {color: red;}
+.capital-flows text{color: red;font-size: 30rpx;}
+.funds-detail {display: flex;flex-direction: row;justify-content: space-around;text-align: center;font-size: 24rpx;color: #888;margin: 40rpx 0}
+.middle-border {border-left: 1px solid #e3e4e5;border-right: 1px solid #e3e4e5;}
+.funds-detail .total-num {color: red;padding: 5rpx 0}
+.funds-detail .total-num text {font-size: 32rpx;}
+.funds-detail view {width: 100%;}
+
+/* 目标金额 统计  */
+.total-support {display: flex;flex-direction: row;align-items: center;justify-content: space-around;}
+.total-support-item{display: flex;flex-direction: row;align-items: center;width: 100%;}
+.border-left { border-right:1px solid #e3e4e5;}
+.already-days {color: red}
+.icon-money {font-size: 60rpx;color: #F8E202; margin-left: 25%;}
+.already-get {font-size: 24rpx;color: #888;margin-left: 20rpx;}
+.already-get .already-support {color: red;padding: 5rpx 0}
+.already-get .already-support text {font-size: 32rpx;}
+/* 分割线  */
+.hr-line{height: 1px;background: #e3e4e5;margin:30rpx 0;}
+/* 项目详情  */
+.project-details-header {color:#555;font-size: 30rpx;background: #fff;padding: 20rpx;margin-top: 20rpx;display: flex;flex-direction: row;justify-content: space-between}
+.project-details-add .olone-style {background: #58C158;color: #fff;font-size: 22rpx;padding:1px;}
+.project-details {background: #fff; padding: 20rpx;}
+/* 患者文字描述  */
+.details-text {font-size: 32rpx;margin-bottom: 10rpx;max-height:130rpx;overflow: hidden;}
+.text-fold {font-size: 32rpx;margin-bottom: 10rpx;}
+
+/* 患者图片描述  */
+/* 文字折叠按钮  */
+.details-img {background: #fff;color: red;}
+.fold-btn {text-align: center;font-size: 30rpx;padding: 25rpx 0;}
+.description-imgs scroll-view {white-space: nowrap;display: flex;overflow: scroll}
+.description-imgs scroll-view view{display: inline-block;margin:0 5rpx;}
+.description-imgs scroll-view view image {height: 200rpx;width: 200rpx;}
+
+
+.increase-credible {border-bottom: 1px solid #e3e4e5; color:#555;font-size: 28rpx;background: #fff;padding: 20rpx;margin-top: 20rpx;display: flex;flex-direction: row;justify-content: space-between}
+/*发起人承诺书  */
+.helped-promise {background: #fff;padding: 20rpx 10rpx;color: #999;font-size: 24rpx;line-height: 1.4}
+/* 筹款动态  */
+.fundraise-news {background: #fff;margin-top: 20rpx;}
+.fundraise-news-nav {font-size: 28rpx;padding: 20rpx;}
+.dynamicContent {padding: 10rpx 0;font-size: 30rpx;}
+.imgStatus {display: flex;flex-direction: row;flex-wrap: wrap;align-items: center;}
+.imgStatus image {margin: 10rpx 20rpx 0 0;width:130rpx;height:130rpx;}
+.avatarImg {margin-right: 20rpx;}
+.avatarImg image {width:60rpx;height:60rpx; border-radius: 50%;margin-top: 10rpx;}
+/* TA的帮助  */
+.ta-help-info {width: 100%;}
+.ta-help {background: #fff;margin-top: 30rpx;}
+.ta-help-header {padding: 20rpx; background: #fff;color: #555; font-size: 28rpx;}
+.ta-help-num {background: #efefef;border-radius: 50%;padding: 10rpx 0;margin-left: 10rpx;font-size: 22rpx;color: red;}
+.ta-help-people {padding: 20rpx 0 40rpx; margin-top: 20rpx;margin: 20rpx 20rpx 20rpx 40rpx;display: flex;flex-direction: row; }
+.border-bottom{border-bottom:1px solid #e3e4e5;}
+.ta-help-name {color: #666;font-size: 26rpx;padding-right: 10rpx;}
+.ta-help-support {color: #000;font-size: 21rpx;}
+.moneyNum {color: red;font-size: 21rpx;}
+.ta-help-date {display: flex;flex-direction: row;justify-content: space-between;font-size: 22rpx;color: #999;width: 100%}
+.ta-help-reply {color: red;}
+.ta-help-message {font-size: 28rpx;background: #F5F5F5;padding: 5rpx 10rpx}
+.ta-reply {color: #4787B7;}
+/* 底部导航栏  */
+.nav-bottom {position:fixed;bottom:0;background:#fff;width:100%;border-top: 1px solid #efe;text-align: center;padding-bottom: 10rpx;height: 90rpx;}
+.nav-bottom-btn {display: flex;flex-direction: row;justify-content: space-between;padding: 10rpx 20rpx 0;color: #999;}
+.btn-click-help {width: 50%;height: 80rpx;}
+.btn-click-help button {background: #fe4145;color: #fff;border-radius: 5rpx;font-size: 32rpx;height: 100%;}
+.nav-to-link {font-size: 26rpx;height: 80rpx;}
+.nav-to-link .btn-icon {font-size: 50rpx;}
+.nav-to-link button {color: #999;line-height:normal;background: #fff;}
+.nav-to-link button::after {width: auto;height: auto;content: ''}
+.icon-xing {color: #FBBC05}
+

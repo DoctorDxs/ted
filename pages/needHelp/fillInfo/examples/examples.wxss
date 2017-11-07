@@ -1,0 +1,14 @@
+/* pages/needHelp/fillInfo/examples/examples.wxss */
+.outer{padding:0 20rpx 40rpx;font-size: 32rpx;}
+.dtitle{text-align: center;font-size: 34rpx;margin: 40rpx 0;color: #fe4145}
+.order {color: #fe4145}
+.pad_border {padding: 40rpx;border-bottom: 1px solid #e3e4e5;}
+.attention {font-size: 28rpx}
+.mart {margin-top: 40rpx;}
+.titleBlock{background: #efefef;margin-top: 20rpx;}
+.textBlock{padding: 20rpx 40rpx}
+.order_pad {padding: 20rpx;color: #fe4145}
+.attention_help{color: #999;font-size: 26rpx;margin-top: 20rpx;}
+.help_include {font-size: 32rpx;margin: 30rpx;}
+.picture_atten {padding: 20rpx 0;}
+

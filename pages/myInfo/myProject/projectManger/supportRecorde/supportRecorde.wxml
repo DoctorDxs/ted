@@ -1,0 +1,61 @@
+<view class='total-header'>
+  <view class='total-item'>
+    <view>
+      <text class='number'>{{thisInfo.people}}</text>人</view>
+    <view>支持人数</view>
+  </view>
+  <view class='total-item middleBorder'>
+    <view>
+      <text class='number'>{{thisInfo.money}}</text>元</view>
+    <view>支持金额</view>
+  </view>
+  <view class='total-item'>
+    <view>
+      <text class='number'>{{thisInfo.num}}</text>次</view>
+    <view>关注人数</view>
+  </view>
+</view>
+<view>
+  <view wx:if='{{helpData.length==0}}' class='nodata'>
+    <view></view> 
+    <view></view>
+    <text>暂无数据</text> 
+    <view></view>
+    <view></view>
+  </view>
+  <view style='background:#fff;'>
+    <block wx:for="{{helpData}}" wx:key wx:for-item='helpListItem'>
+      <view class="ta-help-people border-bottom">
+        <view class="avatarImg">
+          <image src="{{helpListItem.user_wxa.avatarUrl}}"></image>
+        </view>
+        <view class="ta-help-info">
+          <view>
+            <view>
+              <text class="ta-help-name">{{helpListItem.user_wxa.nickName}}</text>
+              <text class="ta-help-support">支持了</text>
+              <text class='moneyNum'>{{helpListItem.price}}元</text>
+            </view>
+            <view class="ta-help-date">
+              <view>{{helpListItem.tDate}}</view>
+              <view class="iconfont icon-xiaoxi1 ta-help-reply" bindtap="helpReply" data-donation='{{helpListItem.id}}'></view>
+            </view>
+          </view>
+          <view>
+            <view class="ta-help-message" wx:if='{{helpListItem.sub}}'>
+              <text class="ta-reply">{{helpListItem.user_wxa.nickName}}：</text>
+              <text>{{helpListItem.sub}}</text>
+            </view>
+            <block wx:for='{{helpListItem.comment}}' wx:for-item='comment' wx:key>
+              <view class="ta-help-message">
+                <text class="ta-reply">{{comment.user_wxa.nickName}}：</text>
+                <text>{{comment.content}}</text>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class='nomore' wx:if='{{nomore && helpData.length!==0}}'>没有数据了...</view>
+  </view>
+</view>

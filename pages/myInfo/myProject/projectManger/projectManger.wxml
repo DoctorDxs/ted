@@ -1,0 +1,26 @@
+<view class='items-style'>
+  <view class='manger-items' bindtap='supportRecorde'>
+    <view class='iconfont icon-jilu-copy  icon-style'></view>
+    <view class='mange-item'>支持记录</view>
+  </view>
+  <view class='manger-items' bindtap='projectEdit'>
+    <view class='iconfont icon-edit2  icon-style'></view>
+    <view class='mange-item'>编辑项目</view>
+  </view>
+  <view class='manger-items' bindtap='updataStatus_click'>
+    <view class='iconfont icon-gengxin  icon-style'></view>
+    <view class='mange-item'>更新动态</view>
+  </view>
+  <view class='manger-items' bindtap='stopProject'>
+    <view class='iconfont icon-close1  icon-style'></view>
+    <view class='mange-item'>提前结束</view>
+  </view>
+  <view class='manger-items' bindtap='contact'>
+    <view class='iconfont icon-kefu  icon-style'></view>
+    <view class='mange-item'>联系客服</view>
+  </view>
+  <view class='manger-items' bindtap='applyPay' wx:if='{{checks== 1 && is_check==-1}}'>
+    <view class='iconfont icon-shenqing  icon-style'></view>
+    <view class='mange-item'>结项申请</view>
+  </view>
+</view>

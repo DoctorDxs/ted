@@ -1,0 +1,14 @@
+<!-- 发起条款  -->
+<view class="outer" wx:if='{{id==0}}'>
+  <text>{{config.clause}}</text>
+  <button style="background:#fe4145;color:#fff;margin-top:40rpx;" bindtap="agreeAndContinue">继续</button>
+</view>
+
+
+
+<!-- 承诺书  -->
+<view class="outer" wx:if='{{id==1}}'>
+  <text>{{config.promise}}</text>
+  <button style="background:#fe4145;color:#fff;margin-top:40rpx;" bindtap="agreeAndContinue">继续</button>
+</view>
+

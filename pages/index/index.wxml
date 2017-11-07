@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<!-- 首页导航栏 -->
+<view class="home-nav">
+  <view class="personal-help {{borderActive ? 'border-active' :''}}" bindtap="personalHelp">个人救助</view>
+  <view class="easy-welfare {{borderActive ? '': 'border-active'}}" bindtap="easyWelfare">轻松公益</view>  
+</view>
+<!-- 首页主要内容 -- 个人求助  -->
+<view>
+  <block wx:for="{{info}}" wx:for-item="infoItem" wx:key>
+    <view class="home-content" bindtap="navTo" data-id="{{infoItem.id}}">
+      <view class="helped-info">
+        <!-- 求助者信息  -->
+        <view class="avtar-name">
+           <image wx:if='{{infoItem.user_wxa.avatarUrl}}' src="{{infoItem.user_wxa.avatarUrl}}" class="acatar-img"></image> 
+          <text class='helped-name'>{{infoItem.user_wxa.nickName}}</text>
+        </view>
+        <!-- 审核及认证情况  -->
+        <view class="helped-staus">
+          <text class="audited" wx:if="{{infoItem.status == 1}}">{{infoItem.checks == 1?'已审核':(infoItem.checks == -1 ?'审核未通过':'审核中')}}</text>
+          <text class="private-bailout">{{infoItem.type == 1 ? '个人救助' : '公益组织救助'}}</text>
+        </view>
+      </view>
+      <!-- 文字描述  -->
+      <view class="helped-description">
+        <view class="description-text">
+          <text>{{infoItem.title}}</text>
+        </view>
+        <!-- 图片描述  -->
+        <view class="description-imgs">
+          <scroll-view scroll-x="true" style=''>
+            <block wx:for="{{infoItem.file}}" wx:for-item="imgItem" wx:key>
+              <view wx:if='{{imgItem}}'><image src='{{imgItem}}'></image></view>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+      <!-- 筹款目标及进度  -->
+      <view class="fundraise-progress"><progress percent="{{infoItem.progress}}" backgroundColor="#ccc" activeColor="green" color="#ccc" stroke-width="2" show-info  /></view>
+      <view class="fundraise-status">
+        <text>目标<text class="suport-total">{{infoItem.price}}</text>元</text>
+        <text>已筹<text class="suport-total">{{infoItem.money}}</text>元</text>
+        <text  class="suport-total">{{infoItem.people}}<text>次支持</text></text>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='nomore' wx:if='{{nomore && info.length!=0}}'>没有数据了...</view>
+<view wx:if='{{info.length==0}}' class='nodata'>
+    <view></view> 
+    <view></view>
+    <text>暂无数据</text> 
+    <view></view>
+    <view></view>
+</view>

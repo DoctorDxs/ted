@@ -1,0 +1,25 @@
+<view class="form-page">
+  <form bindsubmit="mySupport">
+    <view class="support-money">
+      <text>支持金额</text><input placeholder="请输入金额" name="price" type="digit" bindinput="supportMoney" maxlength="7" /><text>元</text>
+    </view>
+    <view class="anonymous-support">
+      <radio-group bindtap="anonymousChecked" name="userName">
+        <label>
+          <radio value="{{anonymous}}" checked="{{anonymous}}" />匿名支持
+        </label>
+      </radio-group>
+    </view>
+    <view class="textarea-text" >
+      <textarea placeholder="说一句鼓励Ta的一句话吧~" name="sub" value="" />
+    </view>
+    <view class="total-submit">
+      <view>
+        <text>合计:</text>
+        <text class="howMoney">{{totaltMoney}}</text>
+        <text>元</text>
+      </view>
+     <view><button formType="submit">帮助他</button></view>
+    </view>
+  </form>
+</view>
